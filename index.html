@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width,
+initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible"content="ie=edge">
+	<title>Google Map</title>
+	<style type="text/css">
+		#map{
+
+  height:400px;
+ width:100%; 
+}
+	</style> 
+</head>
+<body> 
+	<h1>Google Map</h1> 
+	<div id="map"></div>
+	<script type="text/javascript">
+		function initMap(){ 
+		//map features 
+			var options={
+				zoom:10, //zooming length
+				center:{lat:28.7041, lng: 77.1025} //adding directions
+
+		} 
+		//generating new map
+		var map= new google.maps.Map(document.getElementById("map"),options) 
+		//add a new marker 
+		const marker = new google.maps.Marker({
+    position:{lat:28.7041, lng: 77.1025},
+    map: map,//name of the variable for which the new map was created 
+   icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png' //change the icon type
+  }); 
+		//to get info as soon as we click on the symbol 
+		var infoWindow=new google.maps.InfoWindow({content:"<h4>DELHI</h4"}); //displays content in the h1 font size on click
+		marker.addListener("click",function(){
+			infoWindow.open(map,marker);
+		})
+} 
+//add marker function to get multiple coordinates 
+/*}
+  addMarker({
+    coords:{lat:42.4668,1ng:-70.9495},
+    icon Image:'https://developers.google.com/maps/documentati
+    on/javascript/examples/full/images/beachflag.png'
+  });
+  addMarker({coords:{lat:42.8584,1ng:-70.9300}});
+  addMarker({coords:{lat:42.7762,1ng:-71.0773}});
+  // Add Marker Function
+  function addMarker(props){ //props is an object
+    var marker=new google.maps.Marker({
+      position:props.coords,
+ }
+      map:map,
+      icon:props.icon Image
+    });
+
+    */
+                                                        
+                                                                
+
+	
+	</script> 
+	
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdweLfK20tdhWIS79qMhOeoZohDPMJnHY&callback=initMap&v=weekly"
+    
+    ></script>
+</body>
+</html>
